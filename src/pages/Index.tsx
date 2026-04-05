@@ -43,7 +43,7 @@ export default function Index() {
                 style={{ background: "linear-gradient(135deg, var(--neon-purple), #7b2ff7)" }}>
                 🌍
               </div>
-              <span className="font-unbounded font-black text-sm gradient-text">LinguaAI</span>
+              <span className="font-unbounded font-black text-sm gradient-text">Lexiona</span>
             </button>
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl"
