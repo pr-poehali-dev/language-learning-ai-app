@@ -1,5 +1,5 @@
 import Icon from "@/components/ui/icon";
-import { Section, NAV_ITEMS, LESSONS, VOCAB_WORDS, ACHIEVEMENTS } from "./data";
+import { Section, NAV_ITEMS, EXTRA_NAV_ITEMS, LESSONS, VOCAB_WORDS, ACHIEVEMENTS } from "./data";
 
 interface HomeProps {
   setActiveSection: (s: Section) => void;
@@ -78,7 +78,7 @@ export function HomeView({ setActiveSection }: HomeProps) {
       <div>
         <h2 className="font-unbounded text-sm font-bold mb-4 uppercase tracking-wider text-muted-foreground">Разделы</h2>
         <div className="grid grid-cols-2 gap-3">
-          {NAV_ITEMS.map((item) => (
+          {[...NAV_ITEMS, ...EXTRA_NAV_ITEMS].map((item) => (
             <button
               key={item.id}
               onClick={() => setActiveSection(item.id as Section)}

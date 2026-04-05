@@ -1,12 +1,17 @@
-export type Section = "home" | "lessons" | "dialog" | "tests" | "progress" | "vocabulary" | "profile";
+export type Section = "home" | "lessons" | "dialog" | "tests" | "progress" | "vocabulary" | "profile" | "homework" | "store";
 
 export const NAV_ITEMS = [
   { id: "lessons", label: "Уроки", icon: "BookOpen", color: "var(--neon-purple)" },
   { id: "dialog", label: "Диалоги", icon: "MessageCircle", color: "var(--neon-cyan)" },
+  { id: "homework", label: "Задания", icon: "ClipboardCheck", color: "var(--neon-pink)" },
+  { id: "progress", label: "Прогресс", icon: "TrendingUp", color: "#a8edea" },
+  { id: "profile", label: "Профиль", icon: "User", color: "var(--neon-purple)" },
+];
+
+export const EXTRA_NAV_ITEMS = [
   { id: "tests", label: "Тесты", icon: "ClipboardList", color: "var(--neon-yellow)" },
-  { id: "progress", label: "Прогресс", icon: "TrendingUp", color: "var(--neon-pink)" },
   { id: "vocabulary", label: "Словарь", icon: "BookMarked", color: "var(--neon-blue)" },
-  { id: "profile", label: "Профиль", icon: "User", color: "#a8edea" },
+  { id: "store", label: "Магазин", icon: "Sparkles", color: "var(--neon-yellow)" },
 ];
 
 export const LESSONS = [
