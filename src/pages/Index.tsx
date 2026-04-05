@@ -4,9 +4,17 @@ import { Section, NAV_ITEMS } from "@/components/lingua/data";
 import { HomeView, LessonsView, ProgressView, VocabularyView, ProfileView } from "@/components/lingua/SectionViews";
 import { DialogView } from "@/components/lingua/DialogView";
 import { TestsView } from "@/components/lingua/TestsView";
+import { HomeworkView } from "@/components/lingua/HomeworkView";
+import { StoreView } from "@/components/lingua/StoreView";
+import { AuthView } from "@/components/lingua/AuthView";
 
 export default function Index() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeSection, setActiveSection] = useState<Section>("home");
+
+  if (!isLoggedIn) {
+    return <AuthView onAuth={() => setIsLoggedIn(true)} />;
+  }
 
   const renderContent = () => {
     switch (activeSection) {
@@ -16,6 +24,8 @@ export default function Index() {
       case "tests":      return <TestsView />;
       case "progress":   return <ProgressView />;
       case "vocabulary": return <VocabularyView />;
+      case "homework":   return <HomeworkView />;
+      case "store":      return <StoreView />;
       case "profile":    return <ProfileView />;
       default:           return <HomeView setActiveSection={setActiveSection} />;
     }
@@ -46,11 +56,12 @@ export default function Index() {
               <span className="font-unbounded font-black text-sm gradient-text">Lexiona</span>
             </button>
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl"
+              <button onClick={() => setActiveSection("store")}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all hover:opacity-80"
                 style={{ background: "rgba(254,228,64,0.12)", border: "1px solid rgba(254,228,64,0.25)" }}>
                 <span className="text-sm">⚡</span>
                 <span className="font-unbounded font-black text-sm" style={{ color: "var(--neon-yellow)" }}>340</span>
-              </div>
+              </button>
               <div className="flex items-center gap-1 px-3 py-1.5 rounded-xl"
                 style={{ background: "rgba(247,37,133,0.12)", border: "1px solid rgba(247,37,133,0.25)" }}>
                 <span className="text-sm">🔥</span>
